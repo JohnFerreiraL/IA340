@@ -41,4 +41,10 @@ values ('c4', 'facebook', 'r1','p3@jmu.edu');
 --professor must go first because the professor email is being refrenced in the new course table
 
 --Q2.6
+--must update course first because we wont be able to delete p1 if he is still teaching a class
+update course
+set p_email = 'p3@jmu.edu'
+where p_email= 'p1@jmu.edu';
 
+delete from professor
+where p_email = 'p1@jmu.edu'
